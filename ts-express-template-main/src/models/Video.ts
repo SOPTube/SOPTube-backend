@@ -20,7 +20,7 @@ const VideoSchema = new mongoose.Schema({
         required: true,
     },
     watches: {
-        type: String,
+        type: Number,
         default: 0,
     },
     createdAt: {

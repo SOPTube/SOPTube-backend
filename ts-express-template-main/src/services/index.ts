@@ -1,7 +1,7 @@
-// import VideoService from "./VideoService"
+import VideoService from "./VideoService"
 import CategoryService from "./CategoryService"
-//service index file
+
 export {
-    // VideoService,
+    VideoService,
     CategoryService
 }
