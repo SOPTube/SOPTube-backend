@@ -1,5 +1,4 @@
 import VideoService from "./VideoService";
+import RecommendVideoService from "./RecommendVideoService";
 
-export {
-    VideoService,
-}
+export { VideoService, RecommendVideoService };
