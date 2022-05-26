@@ -6,7 +6,7 @@ const VideoSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    img: {
+    thumbnail: {
         type: String,
         required: true
     },
@@ -21,7 +21,6 @@ const VideoSchema = new mongoose.Schema({
     },
     watches: {
         type: String,
-        default: 0,
     },
     createdAt: {
         type: Date,
@@ -29,7 +28,6 @@ const VideoSchema = new mongoose.Schema({
     },
     likes: {
         type: Number,
-        default: 0,
     },
     length: {
         type: String,
@@ -59,10 +57,9 @@ const VideoSchema = new mongoose.Schema({
         },
         commentLikes: {
             type: Number,
-            default: 0,
         }
     }]
 });
 
 
-export default mongoose.model<VideoInfo>("Video", VideoSchema);
+export default mongoose.model<VideoInfo & mongoose.Document>("Video", VideoSchema);

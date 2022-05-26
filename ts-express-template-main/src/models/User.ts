@@ -11,7 +11,6 @@ const UserSchema = new mongoose.Schema({
     },
     subscribes: {
         type: String,
-        default: 0,
     }
 })
 
