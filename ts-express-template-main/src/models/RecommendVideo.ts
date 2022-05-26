@@ -11,7 +11,7 @@ const RecommendsSchema = new mongoose.Schema({
         required: true,
     },
     uploaderId: {
-        type: mongoose.Types.ObjectId,
+        type: String,
         required: true,
     },
     watches: {

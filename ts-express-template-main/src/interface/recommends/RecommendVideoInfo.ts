@@ -1,6 +1,5 @@
-import { CommonVideoFields } from "../common/commonVideoFields";
-import mongoose from "mongoose";
+import { CommonVideoFields } from "../common/CommonVideoFields";
 
 export interface RecommendVideoInfo extends CommonVideoFields {
-    uploaderId: mongoose.Types.ObjectId;
+    uploaderId: string;
 }

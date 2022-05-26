@@ -1,8 +1,8 @@
-import { CommonVideoFields } from "../common/commonVideoFields";
+import { CommonVideoFields } from "../common/CommonVideoFields";
 import mongoose from "mongoose";
 
 export interface VideoInfo extends CommonVideoFields {
-    uploaderId: mongoose.Schema.Types.ObjectId;
+    uploaderId: mongoose.Types.ObjectId;
     category: string;
     createdAt: Date;
     likes: number;
@@ -12,8 +12,8 @@ export interface VideoInfo extends CommonVideoFields {
 }
 
 export interface commentInfo {
-    writerId: mongoose.Schema.Types.ObjectId;
-    CommentContent: string;
-    CommentTimeAgo: string;
-    CommentLikes: number;
+    writerId: mongoose.Types.ObjectId;
+    commentContent: string;
+    commentTimeAgo: string;
+    commentLikes: number;
 }
