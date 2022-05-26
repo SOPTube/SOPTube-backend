@@ -1,5 +1,4 @@
 import VideoController from "./VideoController";
+import RecommendVideoController from "./RecommendVideoController";
 
-export {
-    VideoController,
-};
+export { VideoController, RecommendVideoController };
