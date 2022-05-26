@@ -6,6 +6,7 @@ const message = {
 
   // VIDEO
   READ_VIDEO_AND_COMMENTS_SUCCESS: "영상 및 댓글 조회 성공",
+  READ_VIDEO_SUCCESS: "영상 조회 성공",
 
   // COMMENT
   CREATE_COMMENT_SUCCESS: "댓글 생성 성공",
