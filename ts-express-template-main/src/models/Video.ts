@@ -20,7 +20,8 @@ const VideoSchema = new mongoose.Schema({
         required: true,
     },
     watches: {
-        type: String,
+        type: Number,
+        default: 0,
     },
     createdAt: {
         type: Date,
@@ -28,6 +29,7 @@ const VideoSchema = new mongoose.Schema({
     },
     likes: {
         type: Number,
+        default: 0,
     },
     length: {
         type: String,
@@ -57,6 +59,7 @@ const VideoSchema = new mongoose.Schema({
         },
         commentLikes: {
             type: Number,
+            default: 0,
         }
     }]
 });

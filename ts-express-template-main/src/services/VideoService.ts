@@ -46,6 +46,12 @@ const createComment = async (videoId: string, commentCreateDto: CommentCreateDto
         const updateVideo = await Video.findOneAndUpdate({ _id: videoId }, { comments: newComments}, { new: true })
         if (!updateVideo) return null; 
 
+        // const data = await Video.findById(videoId).select("comments")
+        // .populate({
+        //     path: "comments.writerId", 
+        //     select: [ "name", "profileImg"]
+        // })
+
         const data = await Video.findById(videoId)
         .populate({
             path: "comments.writerId", 

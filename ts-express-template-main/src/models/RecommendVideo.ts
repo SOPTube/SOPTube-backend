@@ -16,6 +16,7 @@ const RecommendsSchema = new mongoose.Schema({
     },
     watches: {
         type: Number,
+        default: 0,
     },
     timeAgo: {
         type: String,

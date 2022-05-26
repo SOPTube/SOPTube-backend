@@ -10,7 +10,8 @@ const UserSchema = new mongoose.Schema({
         type: String
     },
     subscribes: {
-        type: String,
+        type: Number,
+        default: 0,
     }
 })
 
