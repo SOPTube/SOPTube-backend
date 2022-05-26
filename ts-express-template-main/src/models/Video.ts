@@ -65,4 +65,4 @@ const VideoSchema = new mongoose.Schema({
 });
 
 
-export default mongoose.model<VideoInfo>("Video", VideoSchema);
+export default mongoose.model<VideoInfo & mongoose.Document>("Video", VideoSchema);
