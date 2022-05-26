@@ -1,5 +1,7 @@
-import VideoController from "./VideoController";
-
+import CategoryController from "./CategoryController"
+import VideoController from "./VideoController"
+// controller index file
 export {
-    VideoController,
-};
+    CategoryController,
+    VideoController
+}

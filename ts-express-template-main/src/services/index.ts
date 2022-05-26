@@ -1,5 +1,7 @@
-import VideoService from "./VideoService";
+import VideoService from "./VideoService"
+import CategoryService from "./CategoryService"
 
 export {
     VideoService,
+    CategoryService
 }
