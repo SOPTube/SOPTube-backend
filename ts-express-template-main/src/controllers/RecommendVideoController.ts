@@ -56,7 +56,7 @@ const createRecommendVideos = async (req: Request, res: Response) => {
     res
       .status(statusCode.CREATED)
       .send(
-        util.success(statusCode.CREATED, message.CREATE_COMMENT_SUCCESS, data)
+        util.success(statusCode.CREATED, message.CREATE_RECOMMEND_VIDEO, data)
       );
   } catch (error) {
     console.log(error);
