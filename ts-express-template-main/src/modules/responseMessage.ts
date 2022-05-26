@@ -13,7 +13,7 @@ const message = {
     READ_USER_SUCCESS: '유저 조회 성공',
     CREATE_USER_SUCCESS: '유저 생성 성공',
     DELETE_USER_SUCCESS: '유저 삭제 성공',
-    UPDATE_USER_SUCCEss: '유저 삭제 성공',
+    UPDATE_USER_SUCCESS: '유저 삭제 성공',
 
     SIGNIN_USER_SUCCESS: '유저 로그인 성공',
 
@@ -24,7 +24,7 @@ const message = {
     // 영화
     CREATE_MOVIE_SUCESS: '영화 생성 성공',
     CREATE_MOVIE_COMMENT_SUCCESS: '댓글 작성 성공',
-    READ_MOVIE_SUCEESS: '영화 조회 성공'
+    READ_VIDEO_SUCEESS: '영상 조회 성공'
 }
 
 export default message;

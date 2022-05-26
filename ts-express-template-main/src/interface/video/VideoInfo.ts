@@ -8,10 +8,10 @@ export interface VideoInfo extends CommonVideoFields {
     likes: number;
     length: string;
     content: string;
-    comments: commentInfo[];
+    comments: VideoCommentInfo[];
 }
 
-export interface commentInfo {
+export interface VideoCommentInfo {
     writerId: mongoose.Schema.Types.ObjectId;
     CommentContent: string;
     CommentTimeAgo: string;

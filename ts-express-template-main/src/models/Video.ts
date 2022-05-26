@@ -6,14 +6,14 @@ const VideoSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    img: {
+    thumbnail: {
         type: String,
         required: true
     },
     uploaderId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        required: true,
+        required: true
     },
     category: {
         type: String,
