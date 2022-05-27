@@ -1,7 +1,5 @@
-import VideoService from "./VideoService"
-import CategoryService from "./CategoryService"
+import VideoService from "./VideoService";
+import CategoryService from "./CategoryService";
+import RecommendVideoService from "./RecommendVideoService";
 
-export {
-    VideoService,
-    CategoryService
-}
+export { VideoService, RecommendVideoService, CategoryService };

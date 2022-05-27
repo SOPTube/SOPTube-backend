@@ -1,7 +1,5 @@
-import CategoryController from "./CategoryController"
-import VideoController from "./VideoController"
-// controller index file
-export {
-    CategoryController,
-    VideoController
-}
+import VideoController from "./VideoController";
+import RecommendVideoController from "./RecommendVideoController";
+import CategoryController from "./CategoryController";
+
+export { CategoryController, RecommendVideoController, VideoController };
