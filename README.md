@@ -1,2 +1,90 @@
 # SOPTube-backend
-킹갓제네럴엠비션리마스터판타스틱엘라스틱치즈스틱찹스틱붐바스틱지화자따봉레전더리충무공육인궁허니버터지져스내셔널앱솔루트리미티드먼치킨군계일학다크호스프레지던트바론스틸월드클래스엠페러올드스쿨킹크랩치즈그라탕올타임레전드해적왕슈퍼루키크리티컬멘사금메달리스트전교회장깨시민뿌링클혼모노유니버셜언프레딕터블석VIP로얄비선실세금발미녀금수저풀차징만수무강하버드유니버시티천상계베테랑건물주17FW간장게장아나스타샤슈프림임시공휴일슈퍼히어로좌중을압도하는아킬레스건학익진순살탈인간하이테크세레나데주상전하뉴제네레이션원탑알파고데스티네이션빈티지약방의감초해피버스데이밸붕올라운더오이사마에스트로에픽인빈저블유니크섭팟솝튜브레포
+`킹갓제너럴 아웅....... 그냥 우리가 짱이다!!!!....... 섭팟솝튜브레포`
+
+
+## 🫶🏻 서버 역할 분담
+- [`차기 서팟장 임승하`](https://github.com/seunghaLim) : 영상 디테일뷰 조회, 댓글 생성 / 초기세팅 및 interface 생성 
+- [`킹갓 리드 서호영`](https://github.com/tkarndbrtk) : 카테고리 별 영상 리스트 조회, 댓글 생성 / MongoDB 세팅
+- [`감자 클라 김루희`](https://github.com/heerucan) : 추천 영상 리스트 조회, 댓글 생성 / AWS PM2 배포
+ 
+
+
+## 🫶🏻 API 명세서
+API 명세서를 보려면 [Click](https://www.notion.so/q-bit/API-1a00599db67d43afbf1553a09bf2ca57) 해주세요!
+  
+
+## 🫶🏻 깃 브랜치 전략
+- `develop` : default 브랜치
+- `dev_이름` : 각자 맡은 기능들을 개발하는 브랜치 
+- 기능 구현 후 PR을 날리고 팀원들의 코드리뷰를 받고 develop 브랜치에 병합합니다.
+
+
+
+## 🫶🏻 커밋 컨벤션
+- `[ADD]` : 새로운 기능이 추가됐어요.
+- `[UPDATE]` : 기능이 업데이트 됐어요.
+- `[FIX]` : 버그가 수정됐어요.
+- `[DOCS]` : README, wiki 문서를 수정했어요
+- `[STYLE]` : 코드 변경 없이 스타일 변경했어요.
+- `[CHORE]` : 기타 사항이에요. (주석 추가 등등)
+
+
+## 🫶🏻 코드 컨벤션
+- 코드 컨벤션은 기본적으로 에어비앤비의 스타일가이드를 따랐습니다.
+- 자세히 보고 싶다면 [Click](https://q-bit.notion.site/dd304e71deac4c3dab8e58ae3024ac52)해주세요!
+
+
+## 🫶🏻 프로젝트 폴더링
+
+```
+💟 config                    
+ ┗  index.ts
+
+💟 controllers               
+ ┣  index.ts
+ ┣  RecommendVideoController.ts
+ ┣  VideoController.ts
+ ┗  CategoryController.ts
+
+💟 interface              
+ ┗ 💟 common
+ ┃ ┣  CommonVideoFields.ts
+ ┃ ┗  JwtPayloadInfo.ts
+ ┃
+ ┗ 💟 recommends
+   ┣  RecommendVideoCreateDto.ts
+   ┣  RecommendVideoInfo.ts
+   ┗  RecommendVideoResponseDto.ts
+   💟 user
+   ┗  UserInfo.ts
+   💟 video
+   ┣  CommentCreateDto.ts
+   ┣  VideoCommentCreateDto.ts
+   ┗  VideoInfo.ts
+
+💟 loaders                   
+ ┗  db.ts
+
+💟 models                   
+ ┣  RecommendVideo.ts
+ ┣  User.ts
+ ┗  Video.ts
+
+💟 modules  
+ ┣  jwtHandler.ts
+ ┣  responseMessage.ts
+ ┣  statusCode.ts
+ ┗  utils.ts
+
+💟 routes                    
+ ┣  RecommendVideoRouter.ts
+ ┣  VideoRouter.ts
+ ┣  CategoryRouter.ts
+ ┗  index.ts
+
+💟 services                  
+ ┣  RecommendVideoService.ts
+ ┣  VideoService.ts
+ ┣  CategoryService.ts
+ ┗  index.ts
+```
