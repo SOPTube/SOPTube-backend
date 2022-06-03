@@ -14,13 +14,13 @@ let corsOptions_server = {
 };
 
 let corsOptions_local1 = {
-  origin: "localhost:8000",
+  origin: "http://localhost:8000",
   credentials: true,
   optionsSuccessStatus: 200,
 };
 
 let corsOptions_local2 = {
-  origin: "localhost:3000",
+  origin: "http://localhost:3000",
   credentials: true,
   optionsSuccessStatus: 200,
 };
