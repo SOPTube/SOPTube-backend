@@ -49,7 +49,7 @@ interface ErrorType {
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:3000", "aws ec2 인스턴스 주소"],
+    origin: ["http://localhost:8000", "http://localhost:3000", "13.209.5.193"],
   })
 );
 
