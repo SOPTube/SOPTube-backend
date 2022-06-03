@@ -10,7 +10,6 @@ const getCategoryVideo = async (category: string) => {
       })
   
     if (categoryVideo.length === 0) return null;
-    console.log(category);
     return categoryVideo;
 
   } catch (error) {
