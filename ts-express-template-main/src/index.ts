@@ -22,9 +22,17 @@ let corsOptions_local1 = {
 let corsOptions_local2 = {
   origin: "http://localhost:3000",
   credentials: true,
+<<<<<<< HEAD
+  optionsSuccessStatus: 200
+}
+
+app.use(cors(corsOptions_server1));
+app.use(cors(corsOptions_server2));
+=======
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions_server));
+>>>>>>> 92c017b820a576d7fcef049f4654f0bb9169f984
 app.use(cors(corsOptions_local1));
 app.use(cors(corsOptions_local2));
 
