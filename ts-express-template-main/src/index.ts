@@ -7,8 +7,14 @@ const cors = require("cors");
 
 connectDB();
 
-let corsOptions_server = {
-  origin: "http://13.209.5.193:8000",
+let corsOptions_server1 = {
+  origin: ["http://13.209.5.193:8000", "13.209.5.193"],
+  credentials: true,
+  optionsSuccessStatus: 200,
+};
+
+let corsOptions_server2 = {
+  origin: ["http://13.209.5.193:3000", "13.209.5.193"],
   credentials: true,
   optionsSuccessStatus: 200,
 };
@@ -24,7 +30,8 @@ let corsOptions_local2 = {
   credentials: true,
   optionsSuccessStatus: 200,
 };
-app.use(cors(corsOptions_server));
+
+app.use(cors([corsOptions_server1, corsOptions_server2]));
 app.use(cors(corsOptions_local1));
 app.use(cors(corsOptions_local2));
 
@@ -38,6 +45,13 @@ interface ErrorType {
   message: string;
   status: number;
 }
+
+app.use(
+  cors({
+    credentials: true,
+    origin: ["http://localhost:3000", "aws ec2 인스턴스 주소"],
+  })
+);
 
 app.use(function (
   err: ErrorType,
