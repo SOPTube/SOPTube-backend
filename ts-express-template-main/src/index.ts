@@ -30,6 +30,7 @@ let corsOptions_local2 = {
   credentials: true,
   optionsSuccessStatus: 200
 }
+
 app.use(cors(corsOptions_server1));
 app.use(cors(corsOptions_server2));
 app.use(cors(corsOptions_local1));
