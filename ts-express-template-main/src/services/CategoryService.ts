@@ -1,16 +1,16 @@
-import mongoose from "mongoose";
 import Video from "../models/Video";
 
-const getCategoryVideo = async (categoryId: number) => {
+const getCategoryVideo = async (category: string) => {
   try {
-    const categoryVideo = await Video.find({categoryId})
+    console.log(category)
+    const categoryVideo = await Video.find({category})
       .populate({
-        path: "comments.writerId",
+        path: "uploaderId",
         select: ["name", "profileImg"],
       })
-      .populate("uploaderId");
   
     if (categoryVideo.length === 0) return null;
+    console.log(category);
     return categoryVideo;
 
   } catch (error) {

@@ -7,17 +7,21 @@ const cors = require("cors");
 
 connectDB();
 
-let corsOptions = {
-  origin: ["http://13.209.5.193:8000",
-    "http://13.209.5.193:3000", 
-    "http://localhost:8000", 
-    "http://localhost:3000", 
-    "13.209.5.193"],
-  credentials: true,
-  optionsSuccessStatus: 200,
-};
+const corsOrigin = [
+  "http://13.209.5.193:8000",
+  "http://13.209.5.193:3000",
+  "http://localhost:8000",
+  "http://localhost:3000",
+  "13.209.5.193",
+];
 
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: corsOrigin,
+    credentials: true,
+  })
+);
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -28,13 +32,6 @@ interface ErrorType {
   message: string;
   status: number;
 }
-
-app.use(
-  cors({
-    credentials: true,
-    origin: ["http://localhost:3000", "aws ec2 인스턴스 주소"],
-  })
-);
 
 app.use(function (
   err: ErrorType,
