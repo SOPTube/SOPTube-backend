@@ -1,44 +1,47 @@
 import express, { Request, Response, NextFunction } from "express";
 const app = express();
 import connectDB from "./loaders/db";
-import routes from './routes';
-require('dotenv').config();
-const cors = require('cors');
+import routes from "./routes";
+require("dotenv").config();
+const cors = require("cors");
 
 connectDB();
 
-let corsOptions_server1 = {
-  origin: 'http://13.209.5.193:8000',
+let corsOptions_server = {
+  origin: "http://13.209.5.193:8000",
   credentials: true,
-  optionsSuccessStatus: 200
-}
-
-let corsOptions_server2 = {
-  origin: 'http://13.209.5.193:3000',
-  credentials: true,
-  optionsSuccessStatus: 200
-}
+  optionsSuccessStatus: 200,
+};
 
 let corsOptions_local1 = {
-  origin: 'localhost:8000',
+  origin: "localhost:8000",
   credentials: true,
-  optionsSuccessStatus: 200
-}
+  optionsSuccessStatus: 200,
+};
 
 let corsOptions_local2 = {
-  origin: 'localhost:3000',
+  origin: "localhost:3000",
   credentials: true,
-  optionsSuccessStatus: 200
-}
-app.use(cors(corsOptions_server1));
-app.use(cors(corsOptions_server2));
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions_server));
 app.use(cors(corsOptions_local1));
 app.use(cors(corsOptions_local2));
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, PATCH");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "X-Requested-With, content-type, x-access-token"
+  );
+  next();
+});
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(routes);   //라우터 
+app.use(routes); //라우터
 // error handler
 
 interface ErrorType {
@@ -46,8 +49,12 @@ interface ErrorType {
   status: number;
 }
 
-app.use(function (err: ErrorType, req: Request, res: Response, next: NextFunction) {
-
+app.use(function (
+  err: ErrorType,
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "production" ? err : {};
 
@@ -63,7 +70,6 @@ app
           🛡️  Server listening on port 🛡️
     ################################################
   `);
-
   })
   .on("error", (err) => {
     console.error(err);
