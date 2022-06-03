@@ -7,8 +7,14 @@ const cors = require('cors');
 
 connectDB();
 
-let corsOptions_server = {
+let corsOptions_server1 = {
   origin: 'http://13.209.5.193:8000',
+  credentials: true,
+  optionsSuccessStatus: 200
+}
+
+let corsOptions_server2 = {
+  origin: 'http://13.209.5.193:3000',
   credentials: true,
   optionsSuccessStatus: 200
 }
@@ -24,7 +30,8 @@ let corsOptions_local2 = {
   credentials: true,
   optionsSuccessStatus: 200
 }
-app.use(cors(corsOptions_server));
+app.use(cors(corsOptions_server1));
+app.use(cors(corsOptions_server2));
 app.use(cors(corsOptions_local1));
 app.use(cors(corsOptions_local2));
 
@@ -56,6 +63,7 @@ app
           🛡️  Server listening on port 🛡️
     ################################################
   `);
+
   })
   .on("error", (err) => {
     console.error(err);
