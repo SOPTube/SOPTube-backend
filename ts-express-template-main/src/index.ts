@@ -7,33 +7,20 @@ const cors = require("cors");
 
 connectDB();
 
-let corsOptions_server1 = {
-  origin: ["http://13.209.5.193:8000", "13.209.5.193"],
-  credentials: true,
-  optionsSuccessStatus: 200,
-};
+const corsOrigin = [
+  "http://13.209.5.193:8000",
+  "http://13.209.5.193:3000",
+  "http://localhost:8000",
+  "http://localhost:3000",
+  "13.209.5.193",
+];
 
-let corsOptions_server2 = {
-  origin: ["http://13.209.5.193:3000", "13.209.5.193"],
-  credentials: true,
-  optionsSuccessStatus: 200,
-};
-
-let corsOptions_local1 = {
-  origin: ["http://localhost:8000", "13.209.5.193"],
-  credentials: true,
-  optionsSuccessStatus: 200,
-};
-
-let corsOptions_local2 = {
-  origin: ["http://localhost:3000", "13.209.5.193"],
-  credentials: true,
-  optionsSuccessStatus: 200,
-};
-
-app.use(cors([corsOptions_server1, corsOptions_server2]));
-app.use(cors(corsOptions_local1));
-app.use(cors(corsOptions_local2));
+app.use(
+  cors({
+    origin: corsOrigin,
+    credentials: true,
+  })
+);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -45,13 +32,6 @@ interface ErrorType {
   message: string;
   status: number;
 }
-
-app.use(
-  cors({
-    credentials: true,
-    origin: ["http://localhost:8000", "http://localhost:3000", "13.209.5.193"],
-  })
-);
 
 app.use(function (
   err: ErrorType,
