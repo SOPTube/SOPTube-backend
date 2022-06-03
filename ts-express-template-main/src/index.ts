@@ -13,13 +13,20 @@ let corsOptions_server = {
   optionsSuccessStatus: 200
 }
 
-let corsOptions_local = {
+let corsOptions_local1 = {
   origin: 'localhost:8000',
   credentials: true,
   optionsSuccessStatus: 200
 }
+
+let corsOptions_local2 = {
+  origin: 'localhost:3000',
+  credentials: true,
+  optionsSuccessStatus: 200
+}
 app.use(cors(corsOptions_server));
-app.use(cors(corsOptions_local));
+app.use(cors(corsOptions_local1));
+app.use(cors(corsOptions_local2));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
