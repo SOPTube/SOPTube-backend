@@ -3,16 +3,16 @@ os: linux
 
 files:
   - source: /
-    destination: /home/ubuntu/cicd-practice
-permissions:
-  - object: /home/ubuntu/
+    destination: /home/ubuntu/build
+  - object: /
     pattern: '**'
     owner: ubuntu
     group: ubuntu
 hooks:
   BeforeInstall:
-    - location: scripts/before_deploy.sh
+    - location: before_deploy.sh
       runas: ubuntu
   AfterInstall:
-    - location: scripts/after_deploy.sh
+    - location: after_deploy.sh
+      timeout: 180
       runas: ubuntu
