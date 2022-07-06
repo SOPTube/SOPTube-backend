@@ -2,13 +2,21 @@ version: 0.2
 
 phases:
   install:  # 빌드에 필요한 패키지 설치
+    runtime-versions:
+      nodejs: 16.x
     commands:
+      - echo Insatlling NPM Packages and wget Enviorment File
       - npm install  # 설치 명령어
+  pre_build:
+    commands:
+      - npm i
   build:  # 빌드 실행
     commands:
-      - npm run build
+      - echo Build started on `date`
+      - npm run generate
   post_build: # 빌드 후처리
     commands:
+      - echo Build started on `date`
       - rm -rf node_modules .git # 빌드 결과물 용량을 최적화 하기 위한 패키지 및 .git 삭제
       - ls -al
 artifacts:  # 결과물 설정
