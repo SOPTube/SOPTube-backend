@@ -57,5 +57,5 @@ jobs:
         run: aws deploy create-deployment
           --application-cicd-practice-codedeploy
           --deployment-config-name CodeDeployDefault.OneAtATime
-          --deployment-group-name GroupPractice
+          --deployment-group-name PracticeGroup
           --s3-location bucket=cicd-practice,bundleType=zip,key=public/cicd-practice.zip
