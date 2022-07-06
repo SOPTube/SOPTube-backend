@@ -1,7 +1,7 @@
 # This is a basic workflow to help you get started with Actions
 
 name: deploy
-# 해다 브랜치가 push 될 때 해당 액션을 실행
+# 브랜치가 push 될 때 해당 액션을 실행
 on:
   push:
     branches: [ "develop" ]
@@ -15,14 +15,14 @@ jobs:
     
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [14.x]
     # 액션의 실해 수행내용, 단계 별로 실행된다
     steps:
       - name: Checkout source code.
         uses: actions/checkout@v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@2
+        uses: actions/setup-node@v2
         with: 
           node-version: ${{ matrix.node-version }}
 
