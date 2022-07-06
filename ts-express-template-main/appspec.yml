@@ -1,18 +1,5 @@
 version: 0.0
 os: linux
-
 files:
-  - source: /
-    destination: /home/ubuntu/build
-  - object: /
-    pattern: '**'
-    owner: ubuntu
-    group: ubuntu
-hooks:
-  BeforeInstall:
-    - location: before_deploy.sh
-      runas: ubuntu
-  AfterInstall:
-    - location: after_deploy.sh
-      timeout: 180
-      runas: ubuntu
+  - source:  /
+    destination: /home/ubuntu/build/
