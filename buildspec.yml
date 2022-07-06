@@ -4,16 +4,18 @@ phases:
   install:
     runtime-versions:
       nodejs: 12
+    commands:
+      - npm install
   # 빌드 전에 수행할 명령을 입력합니다.
   pre_build:
     commands:
       - echo Buile Phase >> pre_build phase...
-      - npm install yarn -g
+      - npm update 
   # 빌드를 수행할 명령을 입력합니다.
   build:
     commands:
       - echo Buile Phase >> Build started on `date`
-      - yarn run build
+      - npm run build
   # 빌드 후에 수행할 명령을 입력합니다.
   post_build: # 빌드 후처리
     commands:
