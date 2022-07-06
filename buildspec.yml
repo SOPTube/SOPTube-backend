@@ -1,28 +1,26 @@
-version: 0.2
+buildspec.yml
 
-phases:
-  install:
-    runtime-versions:
-      nodejs: 12
-    commands:
-      - npm install
-  # 빌드 전에 수행할 명령을 입력합니다.
-  pre_build:
-    commands:
-      - echo Buile Phase >> pre_build phase...
-      - npm update 
-  # 빌드를 수행할 명령을 입력합니다.
-  build:
-    commands:
-      - echo Buile Phase >> Build started on `date`
-      - npm run build
-  # 빌드 후에 수행할 명령을 입력합니다.
-  post_build: # 빌드 후처리
-    commands:
-      - echo Build started on `date`
-      - rm -rf node_modules .git # 빌드 결과물 용량을 최적화 하기 위한 패키지 및 .git 삭제
-      - ls -al
-artifacts:  # 결과물 설정
-  files:
-    - '**/*'  # 모든 파일을 결과물로 생성
-
+    version: 0.2
+    
+    phases: 
+        install:
+            commands:
+                - echo "Entered the install phase..."
+                - npm install
+        pre_build:
+            commands: 
+                - echo "Entered the pre_build phase..."
+        build:
+            commands:
+                - echo "Entered the build phase..."
+                - echo "Build started on `date`"
+                - npm run build
+        post_build:
+            commands:
+                - echo "Entered the post_build phase..."
+                - echo "Build completed on `date`"
+    
+    artifacts:
+      files:
+        - '**/*'
+      name: project-title
