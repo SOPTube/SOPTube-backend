@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:  # 빌드에 필요한 패키지 설치
     runtime-versions:
-      nodejs: 16
+      nodejs: 12
     commands:
       - echo Insatlling NPM Packages and wget Enviorment File
       - npm install  # 설치 명령어
