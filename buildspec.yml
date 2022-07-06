@@ -1,14 +1,19 @@
 version: 0.2
+
 phases:
-  build:
+  install:  # 빌드에 필요한 패키지 설치
     commands:
-      - echo Build Starting on `date`
-      - yarn run build
-  post_build:
+      - npm install  # 설치 명령어
+  pre_build:  # 빌드 전처리: 코드 검사 
     commands:
-      - echo $(basename ./build/libs/*.jar)
-      - pwd
-artifacts:
+      - npm run lint
+  build:  # 빌드 실행
+    commands:
+      - npm run build
+  post_build: # 빌드 후처리
+    commands:
+      - rm -rf node_modules .git # 빌드 결과물 용량을 최적화 하기 위한 패키지 및 .git 삭제
+      - ls -al
+artifacts:  # 결과물 설정
   files:
-    - build/libs/*.jar
-  discard-paths: yes
+    - '**/*'  # 모든 파일을 결과물로 생성
