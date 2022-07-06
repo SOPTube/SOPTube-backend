@@ -1,4 +1,3 @@
-# This is a basic workflow to help you get started with Actions
 
 name: deploy
 # 브랜치가 push 될 때 해당 액션을 실행
@@ -34,7 +33,13 @@ jobs:
           ${{ secrets.ENV }}
           EOF
           
-      - name: zip distributions
+      - name: Build client files
+        working-directory: ./client
+        run: |
+          yarn install
+          yarn build
+        
+      - name : Zip distributions
         run: zip -r cicd-practice.zip ./client/dist ./server ./appspec.yml ./scripts
 
       - name: AWS configure credentials
