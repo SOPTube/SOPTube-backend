@@ -1,4 +1,4 @@
-import { CommonVideoFields } from "../common/CommonVideoFields";
+import { CommonVideoFields } from "../common/commonVideoFields";
 import mongoose from "mongoose";
 
 export interface VideoInfo extends CommonVideoFields {
