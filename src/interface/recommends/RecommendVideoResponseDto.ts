@@ -1,4 +1,4 @@
-import { CommonVideoFields } from "../common/CommonVideoFields";
+import { CommonVideoFields } from "../common/commonVideoFields";
 
 export interface RecommendVideoResponseDto extends CommonVideoFields {
   uploaderId: string;
