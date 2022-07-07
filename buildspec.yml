@@ -1,23 +1,23 @@
 version: 0.2
 
-phases: 
+phases:
   install:
     commands:
-        - echo "Entered the install phase..."
-        - npm install
+      - echo "Entered the install phase..."
+      - npm install
   pre_build:
-    commands: 
-        - echo "Entered the pre_build phase..."
+    commands:
+      - echo "Entered the pre_build phase..."
+      - npm i
   build:
     commands:
-        - echo "Entered the build phase..."
-        - echo "Build started on `date`"
-        - npm run build
+      - echo "Entered the build phase..."
+      - echo "Build started on `date`"
   post_build:
     commands:
-        - echo "Entered the post_build phase..."
-        - echo "Build completed on `date`"
+      - echo "Entered the post_build phase..."
+      - echo "Build completed on `date`"
 artifacts:
   files:
-    - '**/*'
+    - "**/*"
   name: project-title
